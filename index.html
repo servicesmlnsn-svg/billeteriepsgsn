@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Billetterie Fanzone — PSG vs Arsenal | Finale Champions League</title>
+<meta name="description" content="Réservez votre place pour la Fanzone PSG Fan Club Sénégal — Finale Champions League PSG vs Arsenal à Fun City.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --psg-navy:#0a1e3f;
+    --psg-navy-deep:#061229;
+    --psg-blue:#004170;
+    --psg-red:#da291c;
+    --psg-red-dark:#a81d12;
+    --psg-white:#ffffff;
+    --psg-ice:#e8f0fb;
+    --gold:#d8b25a;
+    --ok:#1faa59;
+    --radius:16px;
+    --shadow:0 20px 50px -12px rgba(0,0,0,.55);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Barlow',system-ui,sans-serif;
+    color:var(--psg-white);
+    background:var(--psg-navy-deep);
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ===== BACKGROUND ATMOSPHERE ===== */
+  .bg{
+    position:fixed;inset:0;z-index:-2;
+    background:
+      radial-gradient(900px 600px at 80% -10%, rgba(218,41,28,.28), transparent 60%),
+      radial-gradient(1100px 700px at 10% 110%, rgba(0,65,112,.55), transparent 60%),
+      linear-gradient(160deg,#0a1e3f 0%,#061229 55%,#04101f 100%);
+  }
+  .bg::after{
+    content:"";position:absolute;inset:0;
+    background-image:
+      repeating-linear-gradient(115deg, rgba(255,255,255,.03) 0 2px, transparent 2px 38px);
+    opacity:.6;
+  }
+
+  .wrap{max-width:760px;margin:0 auto;padding:28px 20px 80px}
+
+  /* ===== HEADER ===== */
+  header{text-align:center;padding:14px 0 6px}
+  .logo{
+    width:118px;height:auto;
+    filter:drop-shadow(0 10px 22px rgba(0,0,0,.55));
+    animation:drop .9s cubic-bezier(.2,.8,.2,1) both;
+  }
+  @keyframes drop{from{opacity:0;transform:translateY(-22px) scale(.9)}to{opacity:1;transform:none}}
+
+  .kicker{
+    margin-top:14px;
+    font-size:.74rem;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--gold);font-weight:700;
+  }
+  h1{
+    font-family:'Anton',sans-serif;
+    font-size:clamp(2.1rem,8vw,3.4rem);
+    line-height:.98;letter-spacing:.01em;
+    margin:8px 0 4px;text-transform:uppercase;
+  }
+  h1 .vs{color:var(--psg-red);display:inline-block;transform:skew(-7deg)}
+
+  /* ===== MATCH CARD ===== */
+  .match{
+    margin:22px 0 30px;
+    background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:var(--radius);
+    padding:20px;
+    backdrop-filter:blur(6px);
+    box-shadow:var(--shadow);
+  }
+  .teams{
+    display:flex;align-items:center;justify-content:space-between;gap:14px;
+  }
+  .team{flex:1;text-align:center}
+  .team b{
+    font-family:'Anton',sans-serif;font-size:clamp(1.1rem,5vw,1.7rem);
+    text-transform:uppercase;letter-spacing:.02em;display:block
+  }
+  .team span{font-size:.72rem;color:var(--psg-ice);opacity:.7;letter-spacing:.15em;text-transform:uppercase}
+  .vsbadge{
+    font-family:'Anton',sans-serif;font-size:1.3rem;color:var(--psg-red);
+    background:rgba(218,41,28,.12);border:1px solid rgba(218,41,28,.4);
+    width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:0 0 auto
+  }
+  .meta{
+    margin-top:18px;padding-top:16px;border-top:1px dashed rgba(255,255,255,.15);
+    display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:center;
+    font-size:.86rem;color:var(--psg-ice)
+  }
+  .meta div{display:flex;align-items:center;gap:7px}
+  .meta svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:2}
+
+  /* ===== TICKET INFO BANNER ===== */
+  .priceband{
+    display:flex;align-items:center;justify-content:space-between;gap:14px;
+    background:linear-gradient(110deg,var(--psg-red),var(--psg-red-dark));
+    border-radius:12px;padding:14px 18px;margin-bottom:26px;
+    box-shadow:0 12px 28px -10px rgba(218,41,28,.7)
+  }
+  .priceband .lbl{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;opacity:.85}
+  .priceband .amt{font-family:'Anton',sans-serif;font-size:1.7rem;line-height:1}
+  .priceband .seats{text-align:right;font-size:.78rem;opacity:.9}
+  .priceband .seats b{font-family:'Anton',sans-serif;font-size:1.2rem;display:block}
+
+  /* ===== FORM CARD ===== */
+  .card{
+    background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.015));
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:var(--radius);
+    padding:26px 22px;
+    box-shadow:var(--shadow);
+  }
+  .step{
+    display:flex;align-items:center;gap:10px;margin-bottom:18px
+  }
+  .step .n{
+    width:28px;height:28px;border-radius:50%;
+    background:var(--psg-red);color:#fff;font-family:'Anton',sans-serif;
+    display:flex;align-items:center;justify-content:center;font-size:.95rem;flex:0 0 auto
+  }
+  .step h2{font-family:'Anton',sans-serif;font-size:1.15rem;text-transform:uppercase;letter-spacing:.02em;font-weight:400}
+
+  label{display:block;font-size:.82rem;font-weight:600;margin:14px 0 6px;color:var(--psg-ice);letter-spacing:.02em}
+  label .req{color:var(--psg-red)}
+
+  input[type=text],input[type=tel]{
+    width:100%;padding:14px 15px;
+    background:rgba(255,255,255,.06);
+    border:1.5px solid rgba(255,255,255,.16);
+    border-radius:11px;color:#fff;font-size:1rem;font-family:inherit;
+    transition:border-color .2s,background .2s;
+  }
+  input::placeholder{color:rgba(255,255,255,.38)}
+  input:focus{outline:none;border-color:var(--psg-red);background:rgba(255,255,255,.09)}
+
+  .qty{display:flex;align-items:center;gap:14px;margin-top:6px}
+  .qty button{
+    width:46px;height:46px;border-radius:11px;border:1.5px solid rgba(255,255,255,.18);
+    background:rgba(255,255,255,.06);color:#fff;font-size:1.5rem;cursor:pointer;
+    font-family:'Anton',sans-serif;transition:.15s;line-height:1
+  }
+  .qty button:hover{background:var(--psg-red);border-color:var(--psg-red)}
+  .qty .val{
+    font-family:'Anton',sans-serif;font-size:1.6rem;min-width:48px;text-align:center
+  }
+  .total-line{
+    margin-top:14px;font-size:.9rem;color:var(--psg-ice);
+    display:flex;justify-content:space-between;align-items:center;
+    padding:12px 15px;background:rgba(216,178,90,.1);border:1px solid rgba(216,178,90,.3);border-radius:10px
+  }
+  .total-line b{font-family:'Anton',sans-serif;font-size:1.35rem;color:var(--gold)}
+
+  /* ===== WAVE BLOCK ===== */
+  .wave-box{
+    margin-top:8px;padding:18px;border-radius:12px;
+    background:linear-gradient(135deg,rgba(29,194,224,.14),rgba(29,194,224,.04));
+    border:1px solid rgba(29,194,224,.35);
+  }
+  .wave-box p{font-size:.88rem;line-height:1.55;color:var(--psg-ice);margin-bottom:14px}
+  .wave-box p b{color:#fff}
+  .wave-btn{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    width:100%;padding:15px;border-radius:11px;
+    background:#1dc2e0;color:#06243a;font-weight:800;font-size:1rem;
+    text-decoration:none;letter-spacing:.02em;
+    box-shadow:0 10px 22px -8px rgba(29,194,224,.7);transition:.18s
+  }
+  .wave-btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+  .wave-btn svg{width:20px;height:20px}
+
+  /* ===== UPLOAD ===== */
+  .upload{
+    margin-top:10px;border:2px dashed rgba(255,255,255,.22);
+    border-radius:12px;padding:22px 16px;text-align:center;cursor:pointer;
+    transition:.2s;background:rgba(255,255,255,.03)
+  }
+  .upload:hover{border-color:var(--psg-red);background:rgba(218,41,28,.06)}
+  .upload.has{border-color:var(--ok);border-style:solid;background:rgba(31,170,89,.08)}
+  .upload svg{width:30px;height:30px;stroke:var(--psg-ice);fill:none;stroke-width:1.6;margin-bottom:8px}
+  .upload .ut{font-size:.9rem;font-weight:600}
+  .upload .us{font-size:.76rem;color:rgba(255,255,255,.5);margin-top:4px}
+  .upload .fname{color:var(--ok);font-weight:700;font-size:.88rem;margin-top:8px;word-break:break-all}
+  #shotInput{display:none}
+  .preview{margin-top:12px;display:none}
+  .preview img{max-width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.15)}
+
+  /* ===== SUBMIT ===== */
+  .submit{
+    margin-top:24px;width:100%;padding:17px;border:0;border-radius:12px;cursor:pointer;
+    background:linear-gradient(110deg,var(--psg-red),var(--psg-red-dark));
+    color:#fff;font-family:'Anton',sans-serif;font-size:1.2rem;letter-spacing:.04em;
+    text-transform:uppercase;box-shadow:0 14px 30px -10px rgba(218,41,28,.75);
+    transition:.18s;
+  }
+  .submit:hover:not(:disabled){transform:translateY(-2px);filter:brightness(1.07)}
+  .submit:disabled{opacity:.55;cursor:not-allowed}
+  .submit.loading{color:transparent;position:relative}
+  .submit.loading::after{
+    content:"";position:absolute;inset:0;margin:auto;width:22px;height:22px;
+    border:3px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;
+    animation:spin .7s linear infinite
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  .err{
+    color:#ffb4ad;font-size:.84rem;margin-top:10px;display:none;
+    background:rgba(218,41,28,.12);border:1px solid rgba(218,41,28,.35);
+    padding:11px 14px;border-radius:9px
+  }
+
+  /* ===== SUCCESS / TICKET ===== */
+  .ticket-wrap{display:none;animation:pop .5s cubic-bezier(.2,.8,.2,1) both}
+  @keyframes pop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+
+  .ticket{
+    position:relative;background:linear-gradient(135deg,#0a1e3f,#061229);
+    border:1px solid rgba(255,255,255,.14);border-radius:18px;overflow:hidden;
+    box-shadow:var(--shadow)
+  }
+  .ticket .top{
+    background:linear-gradient(110deg,var(--psg-red),var(--psg-red-dark));
+    padding:20px;text-align:center
+  }
+  .ticket .top .ok-ic{
+    width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.18);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 10px
+  }
+  .ticket .top .ok-ic svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:3}
+  .ticket .top h2{font-family:'Anton',sans-serif;font-size:1.5rem;text-transform:uppercase}
+  .ticket .top p{font-size:.86rem;opacity:.9;margin-top:3px}
+
+  .ticket .body{padding:24px 22px}
+  .tnum{
+    text-align:center;font-family:'Anton',sans-serif;
+    font-size:clamp(2rem,9vw,2.8rem);color:var(--gold);
+    letter-spacing:.06em;margin-bottom:4px
+  }
+  .tnum-lbl{text-align:center;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--psg-ice);opacity:.65;margin-bottom:20px}
+
+  .perf{
+    border-top:1px dashed rgba(255,255,255,.18);
+    padding-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:13px
+  }
+  .perf div .k{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--psg-ice);opacity:.6}
+  .perf div .v{font-size:1rem;font-weight:700;margin-top:3px}
+  .perf .full{grid-column:1/-1}
+
+  .notch{
+    position:absolute;width:34px;height:34px;border-radius:50%;
+    background:var(--psg-navy-deep);top:50%;
+  }
+  .notch.l{left:-17px}
+  .notch.r{right:-17px}
+
+  .ticket-foot{
+    text-align:center;font-size:.78rem;color:var(--psg-ice);opacity:.7;
+    padding:0 22px 22px;line-height:1.6
+  }
+  .again{
+    margin:18px auto 0;display:block;background:transparent;border:1.5px solid rgba(255,255,255,.25);
+    color:#fff;padding:12px 26px;border-radius:11px;font-family:inherit;font-weight:700;
+    cursor:pointer;transition:.15s;font-size:.9rem
+  }
+  .again:hover{border-color:var(--psg-red);background:rgba(218,41,28,.1)}
+
+  footer{
+    text-align:center;margin-top:42px;font-size:.78rem;
+    color:var(--psg-ice);opacity:.55;line-height:1.7
+  }
+  footer b{color:var(--gold)}
+
+  @media(max-width:480px){
+    .wrap{padding:20px 14px 60px}
+    .priceband{flex-direction:column;text-align:center;gap:8px}
+    .priceband .seats{text-align:center}
+  }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+
+<div class="wrap">
+
+  <header>
+    <img src="/Users/macbookair/Desktop/PSG/psg.jpeg" alt="PSG Fan Club Sénégal" class="logo">
+    <div class="kicker">PSG Fan Club Sénégal · Fanzone Officielle</div>
+    <h1>PSG <span class="vs">VS</span> Arsenal</h1>
+  </header>
+
+  <!-- MATCH INFO -->
+  <div class="match">
+    <div class="teams">
+      <div class="team"><b>PSG</b><span>Tenant du titre</span></div>
+      <div class="vsbadge">VS</div>
+      <div class="team"><b>Arsenal</b><span>Finaliste</span></div>
+    </div>
+    <div class="meta">
+      <div>
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Samedi 30 mai 2026
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        Coup d'envoi 18h00
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7-5.2-7-11a7 7 0 0114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        Fun City
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICE BAND -->
+  <div class="priceband">
+    <div>
+      <div class="lbl">Prix du ticket Fanzone</div>
+      <div class="amt" id="bandPrice">5 000 FCFA</div>
+    </div>
+    <div class="seats">
+      <div class="lbl">Ambiance</div>
+      <b>Écran géant</b>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="card" id="formCard">
+
+    <div class="step">
+      <div class="n">1</div>
+      <h2>Vos informations</h2>
+    </div>
+
+    <label>Prénom <span class="req">*</span></label>
+    <input type="text" id="prenom" placeholder="Ex : Mouhamed" autocomplete="given-name">
+
+    <label>Nom <span class="req">*</span></label>
+    <input type="text" id="nom" placeholder="Ex : Diop" autocomplete="family-name">
+
+    <label>Numéro de téléphone <span class="req">*</span></label>
+    <input type="tel" id="tel" placeholder="Ex : 77 123 45 67" autocomplete="tel">
+
+    <label>Nombre de tickets <span class="req">*</span></label>
+    <div class="qty">
+      <button type="button" id="minus">−</button>
+      <div class="val" id="qtyVal">1</div>
+      <button type="button" id="plus">+</button>
+    </div>
+
+    <div class="total-line">
+      <span>Total à payer</span>
+      <b id="totalAmount">5 000 FCFA</b>
+    </div>
+
+    <div class="step" style="margin-top:28px">
+      <div class="n">2</div>
+      <h2>Paiement Wave</h2>
+    </div>
+
+    <div class="wave-box">
+      <p>Payez le montant total via <b>Wave</b> en cliquant sur le bouton ci-dessous, puis <b>faites une capture d'écran</b> de la confirmation de paiement.</p>
+      <a href="#" id="waveLink" class="wave-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 12c2-4 4-4 6 0s4 4 6 0 4-4 4-4"/><path d="M2 12c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10S2 17.5 2 12z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        Payer avec Wave
+      </a>
+    </div>
+
+    <div class="step" style="margin-top:28px">
+      <div class="n">3</div>
+      <h2>Preuve de paiement</h2>
+    </div>
+
+    <label>Capture d'écran du paiement Wave <span class="req">*</span></label>
+    <div class="upload" id="uploadZone">
+      <svg viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 14v4a2 2 0 002 2h12a2 2 0 002-2v-4"/></svg>
+      <div class="ut">Toucher pour ajouter la capture</div>
+      <div class="us">JPG ou PNG · 5 Mo max</div>
+      <div class="fname" id="fileName"></div>
+    </div>
+    <input type="file" id="shotInput" accept="image/*">
+    <div class="preview" id="preview"><img id="previewImg" alt="aperçu"></div>
+
+    <button class="submit" id="submitBtn">Valider & obtenir mon ticket</button>
+    <div class="err" id="errBox"></div>
+  </div>
+
+  <!-- SUCCESS TICKET -->
+  <div class="ticket-wrap" id="ticketWrap">
+    <div class="ticket">
+      <div class="top">
+        <div class="ok-ic">
+          <svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <h2>Réservation confirmée</h2>
+        <p>Présentez ce ticket à l'entrée de la Fanzone</p>
+      </div>
+      <div class="body">
+        <div class="tnum" id="ticketNumber">#PSG0000F</div>
+        <div class="tnum-lbl">Numéro de ticket</div>
+        <span class="notch l"></span>
+        <span class="notch r"></span>
+        <div class="perf">
+          <div><div class="k">Nom</div><div class="v" id="tName">—</div></div>
+          <div><div class="k">Téléphone</div><div class="v" id="tPhone">—</div></div>
+          <div><div class="k">Tickets</div><div class="v" id="tQty">—</div></div>
+          <div><div class="k">Montant</div><div class="v" id="tAmount">—</div></div>
+          <div class="full"><div class="k">Match</div><div class="v">PSG vs Arsenal — 30 mai 2026, Fun City</div></div>
+        </div>
+      </div>
+      <div class="ticket-foot">
+        Capture ou screenshot ce ticket.<br>
+        Une copie a été enregistrée par le PSG Fan Club Sénégal.
+      </div>
+    </div>
+    <button class="again" id="againBtn">Faire une autre réservation</button>
+  </div>
+
+  <footer>
+    Organisé par le <b>PSG Fan Club Sénégal</b><br>
+    Fanzone — Finale UEFA Champions League 2026 · Fun City
+  </footer>
+
+</div>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
