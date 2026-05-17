@@ -22,7 +22,7 @@ const CONFIG = {
        3. Copie le lien (il ressemble à https://pay.wave.com/m/XXXX/c/sn/ )
      Si tu n'as qu'un numéro Wave, mets par ex :
        "https://wa.me/221770000000" ou laisse le numéro affiché.        */
-  WAVE_LIEN: "https://pay.wave.com/m/M_v6rwCzRuoFoJ",
+  WAVE_LIEN: "https://pay.wave.com/m/M_sn_3y99BcoMKwC-/c/sn/?amount=5000",
 
   /* ---- NUMÉRO WAVE (affiché en secours si pas de lien) ---- */
   WAVE_NUMERO: "77 762 13 51",
@@ -38,5 +38,5 @@ const CONFIG = {
        https://script.google.com/macros/s/AKfyc..../exec
      Tant qu'elle n'est pas remplie, le ticket s'affiche quand même
      mais n'est PAS enregistré dans Google Sheets.                       */
-  SHEET_URL: "https://pay.wave.com/m/M_sn_3y99BcoMKwC-/c/sn/?amount=5000",
+  SHEET_URL: "https://script.google.com/macros/s/AKfycbx07VM7SRr56TAydWc5VwmBSWSR8LFvWTXiz8RBr2324uApMvQTo97cUVOiZTm8J3eF/exec",
 };
