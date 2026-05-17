@@ -25,7 +25,7 @@ const CONFIG = {
   WAVE_LIEN: "https://pay.wave.com/m/M_sn_3y99BcoMKwC-/c/sn/?amount=5000",
 
   /* ---- NUMÉRO WAVE (affiché en secours si pas de lien) ---- */
-  WAVE_NUMERO: "77 762 13 51",
+  WAVE_NUMERO: "77 537 38 18",
 
   /* ---- PRÉFIXE DES NUMÉROS DE TICKET ----
      Exemple : "PSG" + numéro + "F"  ->  #PSG0065F                       */
