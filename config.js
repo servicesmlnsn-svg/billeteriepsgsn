@@ -38,5 +38,5 @@ const CONFIG = {
        https://script.google.com/macros/s/AKfyc..../exec
      Tant qu'elle n'est pas remplie, le ticket s'affiche quand même
      mais n'est PAS enregistré dans Google Sheets.                       */
-  SHEET_URL: "https://script.google.com/macros/s/AKfycbx07VM7SRr56TAydWc5VwmBSWSR8LFvWTXiz8RBr2324uApMvQTo97cUVOiZTm8J3eF/exec",
+  SHEET_URL: "https://pay.wave.com/m/M_sn_3y99BcoMKwC-/c/sn/?amount=5000",
 };
